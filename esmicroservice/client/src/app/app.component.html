@@ -1,0 +1,49 @@
+<br/>
+<mat-card>Index document to ES(Create)<br/>
+  <mat-form-field class="example-full-width">
+    <mat-label>Id</mat-label>
+    <input matInput [(ngModel)]="CId" placeholder="" value="">
+  </mat-form-field>&nbsp;
+  <mat-form-field class="example-full-width">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="CTitle" placeholder="" value="">
+  </mat-form-field>&nbsp;
+  
+  <mat-form-field class="example-full-width">
+    <mat-label>description</mat-label>
+    <input matInput [(ngModel)]="CDescription" placeholder="" value="">
+  </mat-form-field>
+
+  <button (click)="onCreate()" mat-button color="primary">Create</button>
+
+</mat-card><br /><br />
+<mat-card>Search <br/>
+  <mat-form-field class="example-full-width">
+    <mat-label>search</mat-label>
+    <input [(ngModel)]="searchValue" autocomplete="new-password" matInput (keyup)="onsearch()" placeholder="" value="">    
+    
+  </mat-form-field>
+  <button (click)="onsearch()" mat-button color="primary">Search</button><br/>
+  <mat-selection-list  [multiple]="false">
+    <mat-list-option *ngFor="let option of filteredOptions" [value]="option">
+      {{option}}
+    </mat-list-option>
+  </mat-selection-list>
+
+</mat-card><br /><br />
+<mat-card>Update document<br/>
+  <mat-form-field class="example-full-width">
+    <mat-label>Id</mat-label>
+    <input [(ngModel)]="SId" matInput placeholder="" value="">
+  </mat-form-field><br/>
+   <mat-form-field class="example-full-width">
+    <mat-label>Key</mat-label>
+    <input [(ngModel)]="Skey"  matInput placeholder="" value="">
+  </mat-form-field>&nbsp;
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Value</mat-label>
+    <input [(ngModel)]="Svalue"  matInput placeholder="" value="">
+  </mat-form-field>&nbsp;
+  <button (click)="onUpdate()" mat-button color="primary">Update</button>
+</mat-card><br /><br />

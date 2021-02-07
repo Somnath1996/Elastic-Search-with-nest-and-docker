@@ -39,17 +39,11 @@ export class SearchService {
   }
   //?Add document
   async createIndex(id, body) {
-    const result = await this.esService.index(
-      {
-        index: this.configService.get('ELASTICSEARCH_INDEX'),
-        id: id,
-        body: body,
-      },
-      {
-        maxRetries: 3,
-        context:"hello"
-      },
-    );
+    const result = await this.esService.index({
+      index: this.configService.get('ELASTICSEARCH_INDEX'),
+      id: id,
+      body: body,
+    });
 
     return result;
   }
